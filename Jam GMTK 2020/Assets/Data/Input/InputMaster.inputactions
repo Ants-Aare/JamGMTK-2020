@@ -1,5 +1,5 @@
 {
-    "name": "Controls",
+    "name": "InputMaster",
     "maps": [
         {
             "name": "FPSMap",
@@ -9,6 +9,14 @@
                     "name": "Interact",
                     "type": "Button",
                     "id": "7bc921fb-952e-4905-b83c-0a9377ba1989",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "UseItem",
+                    "type": "Button",
+                    "id": "662ccb77-9700-4dbe-b61c-782b384d0375",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -23,6 +31,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "75b37f79-7026-4a95-9c21-4a1a8fd8f5cd",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UseItem",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

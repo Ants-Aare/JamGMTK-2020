@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1478176539}
   m_Layer: 10
-  m_Name: InteractionAnchor
+  m_Name: Carry Anchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -90,6 +90,36 @@ MonoBehaviour:
   m_DefaultActionMap: FPSMap
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &229976319839021241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7032430806883026927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6903b6074e9826ed6962d80267767769, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentItem: {fileID: 0}
+  throwForceStrength: 500
+  carryForceStrength: 100
+  forwardTransform: {fileID: 7030462799791766545}
+  carryAnchor: {fileID: 1478176539}
+--- !u!114 &1454659885373740901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7032430806883026927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 642db7c9546469a0ca5684a644605288, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryController: {fileID: 229976319839021241}
 --- !u!114 &1145830037
 MonoBehaviour:
   m_ObjectHideFlags: 0

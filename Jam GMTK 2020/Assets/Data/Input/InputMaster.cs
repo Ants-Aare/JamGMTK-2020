@@ -1,4 +1,4 @@
-// GENERATED AUTOMATICALLY FROM 'Assets/Data/InputMaster.inputactions'
+// GENERATED AUTOMATICALLY FROM 'Assets/Data/Input/InputMaster.inputactions'
 
 using System;
 using System.Collections;
@@ -25,6 +25,14 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""UseItem"",
+                    ""type"": ""Button"",
+                    ""id"": ""662ccb77-9700-4dbe-b61c-782b384d0375"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -38,6 +46,17 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""75b37f79-7026-4a95-9c21-4a1a8fd8f5cd"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""UseItem"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -47,6 +66,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
         // FPSMap
         m_FPSMap = asset.FindActionMap("FPSMap", throwIfNotFound: true);
         m_FPSMap_Interact = m_FPSMap.FindAction("Interact", throwIfNotFound: true);
+        m_FPSMap_UseItem = m_FPSMap.FindAction("UseItem", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -97,11 +117,13 @@ public class @InputMaster : IInputActionCollection, IDisposable
     private readonly InputActionMap m_FPSMap;
     private IFPSMapActions m_FPSMapActionsCallbackInterface;
     private readonly InputAction m_FPSMap_Interact;
+    private readonly InputAction m_FPSMap_UseItem;
     public struct FPSMapActions
     {
         private @InputMaster m_Wrapper;
         public FPSMapActions(@InputMaster wrapper) { m_Wrapper = wrapper; }
         public InputAction @Interact => m_Wrapper.m_FPSMap_Interact;
+        public InputAction @UseItem => m_Wrapper.m_FPSMap_UseItem;
         public InputActionMap Get() { return m_Wrapper.m_FPSMap; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -114,6 +136,9 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @Interact.started -= m_Wrapper.m_FPSMapActionsCallbackInterface.OnInteract;
                 @Interact.performed -= m_Wrapper.m_FPSMapActionsCallbackInterface.OnInteract;
                 @Interact.canceled -= m_Wrapper.m_FPSMapActionsCallbackInterface.OnInteract;
+                @UseItem.started -= m_Wrapper.m_FPSMapActionsCallbackInterface.OnUseItem;
+                @UseItem.performed -= m_Wrapper.m_FPSMapActionsCallbackInterface.OnUseItem;
+                @UseItem.canceled -= m_Wrapper.m_FPSMapActionsCallbackInterface.OnUseItem;
             }
             m_Wrapper.m_FPSMapActionsCallbackInterface = instance;
             if (instance != null)
@@ -121,6 +146,9 @@ public class @InputMaster : IInputActionCollection, IDisposable
                 @Interact.started += instance.OnInteract;
                 @Interact.performed += instance.OnInteract;
                 @Interact.canceled += instance.OnInteract;
+                @UseItem.started += instance.OnUseItem;
+                @UseItem.performed += instance.OnUseItem;
+                @UseItem.canceled += instance.OnUseItem;
             }
         }
     }
@@ -128,5 +156,6 @@ public class @InputMaster : IInputActionCollection, IDisposable
     public interface IFPSMapActions
     {
         void OnInteract(InputAction.CallbackContext context);
+        void OnUseItem(InputAction.CallbackContext context);
     }
 }
