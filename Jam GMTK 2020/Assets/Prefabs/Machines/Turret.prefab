@@ -58,6 +58,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1e79d30aa7224d7b9b994cf20538e88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  storedAmmunition: []
 --- !u!1001 &8571006704557108831
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -83,7 +84,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 261786096280dcecc9787a99a055368a,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.7071068
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 261786096280dcecc9787a99a055368a,
         type: 3}
@@ -98,7 +99,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 261786096280dcecc9787a99a055368a,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 261786096280dcecc9787a99a055368a,
         type: 3}
@@ -108,7 +109,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 261786096280dcecc9787a99a055368a,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -90.00001
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 261786096280dcecc9787a99a055368a,
         type: 3}
