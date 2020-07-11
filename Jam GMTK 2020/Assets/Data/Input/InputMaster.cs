@@ -40,7 +40,7 @@ public class @InputMaster : IInputActionCollection, IDisposable
                     ""name"": """",
                     ""id"": ""2b305dce-f2bb-4278-81e6-a13e84934a22"",
                     ""path"": ""<Keyboard>/x"",
-                    ""interactions"": ""Tap"",
+                    ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Interact"",

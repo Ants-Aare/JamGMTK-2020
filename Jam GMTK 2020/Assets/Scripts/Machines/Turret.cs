@@ -4,55 +4,23 @@ using System.Collections.Generic;
 
 namespace GMTKJAM.Machines
 {
-    public class Turret : MachineBase
+    public class Turret : ResourceMachine
     {
-        public List<AmmoItem> storedAmmunition = new List<AmmoItem>();
-        private AmmoItem currentAmmunition;
-
         void OnTriggerEnter(Collider collider)
         {
-            AmmoItem ammo = collider.GetComponent<AmmoItem>();
-            if (ammo != null)
+            Ammunition ammunition = collider.GetComponent<Ammunition>();
+            if (ammunition != null)
             {
-                if (!storedAmmunition.Contains(ammo))
-                    storedAmmunition.Add(ammo);
-
-                ammo.GetComponent<Interactable>().CanInteract(false);
+                AddResource(ammunition);
             }
         }
         void OnTriggerExit(Collider other)
         {
-            AmmoItem ammo = GetComponent<Collider>().GetComponent<AmmoItem>();
-            if (ammo != null)
+            Ammunition ammunition = GetComponent<Collider>().GetComponent<Ammunition>();
+            if (ammunition != null)
             {
-                if (storedAmmunition.Contains(ammo))
-                    storedAmmunition.Remove(ammo);
-
-                ammo.GetComponent<Interactable>().CanInteract(false);
+                RemoveResource(ammunition);
             }
-        }
-
-        public bool UseAmmunition()
-        {
-            if (currentAmmunition == null)
-            {
-                if (storedAmmunition.Count == 0)
-                    return false;
-                else
-                {
-                    currentAmmunition = storedAmmunition[storedAmmunition.Count - 1];
-                }
-            }
-
-            currentAmmunition.resourceAmount--;
-
-            if (currentAmmunition.resourceAmount <= 0)
-            {
-                storedAmmunition.Remove(currentAmmunition);
-                Destroy(currentAmmunition.gameObject);
-                currentAmmunition = null;
-            }
-            return true;
         }
     }
 }

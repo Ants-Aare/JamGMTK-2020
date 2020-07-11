@@ -13,13 +13,17 @@ namespace GMTKJAM.Items
         public virtual void PickUp()
         {
             onPickup?.Invoke();
-            PlayerController.instance.inventoryController.EquipItem(this);
         }
         public virtual void Drop()
         {
             onDrop?.Invoke();
         }
-        public virtual void Use(InventoryController source)
+
+        public virtual void Use(PlayerController source)
+        {
+
+        }
+        public virtual void StopUse()
         {
 
         }

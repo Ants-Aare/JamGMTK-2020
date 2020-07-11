@@ -1,13 +1,17 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace GMTKJAM.Items
 {
     public class ResourceItem : ItemBase
     {
         public Rigidbody rigidBody;
-        private float defaultDrag = 0.3f;
-        private float carryDrag = 4f;
+        private const float defaultDrag = 0.3f;
+        private const float carryDrag = 4f;
         public int resourceAmount = 50;
+        public int totalResourceAmount = 50;
+
+        private UnityEvent onDestroy;
 
         void Awake()
         {
@@ -37,9 +41,15 @@ namespace GMTKJAM.Items
             rigidBody.useGravity = true;
             rigidBody.drag = defaultDrag;
         }
-        public override void Use(InventoryController source)
+        public override void Use(PlayerController source)
         {
-            source.ThrowItem();
+            source.inventoryController.ThrowItem();
+        }
+
+        public virtual void DestroyItem()
+        {
+            onDestroy?.Invoke();
+            Destroy(gameObject);
         }
     }
 }

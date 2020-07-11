@@ -22,6 +22,16 @@ public class Interactable : MonoBehaviour
     {
         CanInteract(canInteract);
     }
+    private void OnDisable()
+    {
+        if (controller != null)
+            controller.RemoveInteractable(this);
+    }
+    void OnDestroy()
+    {
+        if (controller != null)
+            controller.RemoveInteractable(this);
+    }
 
     #region Collision Registering
     void OnTriggerEnter(Collider collider)

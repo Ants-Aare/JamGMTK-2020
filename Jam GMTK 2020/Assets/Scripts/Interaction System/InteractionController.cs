@@ -68,7 +68,7 @@ public class InteractionController : MonoBehaviour
     }
     public void InteractWithNearest(InputAction.CallbackContext context)
     {
-        if (canInteract)
+        if (context.started && canInteract)
         {
             if (closestInteractable != null)
             {
