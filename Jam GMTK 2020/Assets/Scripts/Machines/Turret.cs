@@ -6,10 +6,13 @@ namespace GMTKJAM.Machines
 {
     public class Turret : ResourceMachine
     {
+        public MapController map;
+        public AudioSource shootSound;
+        public TraumaInducer shakeFX;
         void OnTriggerEnter(Collider collider)
         {
             Ammunition ammunition = collider.GetComponent<Ammunition>();
-            if (ammunition != null)
+            if (ammunition != null && ammunition.GetComponent<Interactable>().canInteract)
             {
                 AddResource(ammunition);
             }
@@ -20,6 +23,16 @@ namespace GMTKJAM.Machines
             if (ammunition != null)
             {
                 RemoveResource(ammunition);
+            }
+        }
+
+        public void TryShootTurret()
+        {
+            if (UseResource())
+            {
+                shootSound.Play();
+                StartCoroutine(shakeFX.Start());
+                map.FireGun();
             }
         }
     }

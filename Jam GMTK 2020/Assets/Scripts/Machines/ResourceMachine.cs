@@ -67,10 +67,7 @@ namespace GMTKJAM.Machines
             }
             else
             {
-                if (storedResources.Count > 1)
-                    stat.UpdateFillPercent(1);
-                else
-                    stat.UpdateFillPercent(activeResource.resourceAmount / activeResource.totalResourceAmount);
+                stat.UpdateFill(activeResource.resourceAmount);
             }
 
         }

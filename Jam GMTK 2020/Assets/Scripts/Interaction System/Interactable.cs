@@ -8,7 +8,7 @@ public class Interactable : MonoBehaviour
     [Header("Values")]
     public string actionName = "Interact";
     [SerializeField]
-    private bool canInteract = true;
+    public bool canInteract = true;
     [SerializeField]
     private bool awaitInteractionEnd = false;
     public Transform UITarget = null;
