@@ -10,10 +10,13 @@ namespace GMTKJAM.Machines
         protected List<ResourceItem> storedResources = new List<ResourceItem>();
         protected ResourceItem activeResource;
         [SerializeField]
+        protected UnityEvent onResourceAdded;
+        [SerializeField]
         protected UnityEvent onResourceEmpty;
 
         protected virtual void AddResource(ResourceItem resource)
         {
+            onResourceAdded?.Invoke();
             storedResources.Add(resource);
             UpdateStat();
             resource.GetComponent<Interactable>().CanInteract(false);

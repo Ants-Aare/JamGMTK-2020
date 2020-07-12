@@ -1,5 +1,19 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!64 &411386247496309735
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 899088645055328552}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 360617096439179767, guid: 261786096280dcecc9787a99a055368a, type: 3}
 --- !u!1 &8571006704389075940
 GameObject:
   m_ObjectHideFlags: 0
@@ -45,8 +59,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.2331699, y: 2.6020994, z: 3.1862607}
-  m_Center: {x: -0.11658496, y: 1.5499349, z: -0.018118143}
+  m_Size: {x: 2.9501538, y: 1.791059, z: 2.3034105}
+  m_Center: {x: -0.9750769, y: 0.9012592, z: -0.018118143}
 --- !u!114 &8571006704389075941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60,7 +74,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stat: {fileID: 2870312055537123258}
-  storedAmmunition: []
+  breakThreshhold: 1
+  brokenness: 0
+  onRepaired:
+    m_PersistentCalls:
+      m_Calls: []
+  onBroken:
+    m_PersistentCalls:
+      m_Calls: []
+  onResourceAdded:
+    m_PersistentCalls:
+      m_Calls: []
+  onResourceEmpty:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &7697441515146717868
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -178,6 +205,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stat
       objectReference: {fileID: 0}
+    - target: {fileID: 8335554618629690715, guid: 380102f199b8e0d2691e529d3e9e58e3,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.1990032
+      objectReference: {fileID: 0}
+    - target: {fileID: 8335554618629690715, guid: 380102f199b8e0d2691e529d3e9e58e3,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.23718983
+      objectReference: {fileID: 0}
+    - target: {fileID: 8335554618629690715, guid: 380102f199b8e0d2691e529d3e9e58e3,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.4056604
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 380102f199b8e0d2691e529d3e9e58e3, type: 3}
 --- !u!224 &8042858368462944152 stripped
@@ -270,11 +312,18 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5743679478354353371, guid: 261786096280dcecc9787a99a055368a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 261786096280dcecc9787a99a055368a, type: 3}
 --- !u!4 &8176544963478374836 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 261786096280dcecc9787a99a055368a,
+    type: 3}
+  m_PrefabInstance: {fileID: 8571006704557108831}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &899088645055328552 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -393957815904755849, guid: 261786096280dcecc9787a99a055368a,
     type: 3}
   m_PrefabInstance: {fileID: 8571006704557108831}
   m_PrefabAsset: {fileID: 0}

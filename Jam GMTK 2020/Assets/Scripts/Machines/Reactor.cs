@@ -27,6 +27,7 @@ namespace GMTKJAM.Machines
         {
             if (fuelAmount < maxFuelAmount)
             {
+                onResourceAdded?.Invoke();
                 fuelAmount += resource.resourceAmount;
                 resource.DestroyItem();
                 UpdateStat();

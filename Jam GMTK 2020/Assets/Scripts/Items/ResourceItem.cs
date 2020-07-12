@@ -5,13 +5,13 @@ namespace GMTKJAM.Items
 {
     public class ResourceItem : ItemBase
     {
+        [SerializeField]
+        private UnityEvent onDestroy;
+        public int resourceAmount = 50;
+        public int totalResourceAmount = 50;
         public Rigidbody rigidBody;
         private const float defaultDrag = 0.3f;
         private const float carryDrag = 4f;
-        public int resourceAmount = 50;
-        public int totalResourceAmount = 50;
-
-        private UnityEvent onDestroy;
 
         void Awake()
         {
