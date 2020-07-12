@@ -1,14 +1,9 @@
 fileFormatVersion: 2
-guid: 25068adfa36a2d9129f0f70253fc70e8
+guid: 9215ab2969369659fb199b66aa00e10d
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Glowy
-    second: {fileID: 2100000, guid: 67adcb7add995b2c89aedc45ede9a187, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 1
     materialName: 0
