@@ -9,6 +9,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Glowy
     second: {fileID: 2100000, guid: 67adcb7add995b2c89aedc45ede9a187, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Props
+    second: {fileID: 2100000, guid: c010443af1e14dc10be033cb9eea3a17, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

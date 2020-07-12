@@ -26,6 +26,8 @@ namespace GMTKJAM.Items
         [SerializeField]
         private Transform carryAnchor;
         [SerializeField]
+        private Transform toolAnchor;
+        [SerializeField]
         private PlayerController player;
         #region monobehaviour
         void Update()
@@ -45,27 +47,31 @@ namespace GMTKJAM.Items
         #region using items
         public void UseItem(InputAction.CallbackContext context)
         {
-            if (selectedTool == -1)
-            {
-                //Use the currently held resource
-                if (currentItem == null)
-                    return;
+            ItemBase item = null;
 
-                switch (context.phase)
-                {
-                    case InputActionPhase.Started:
-                        currentItem.Use(player);
-                        break;
-                    case InputActionPhase.Canceled:
-                        currentItem.StopUse();
-                        break;
-                    default:
-                        break;
-                }
+
+            if (selectedTool < 0)
+            {
+                item = currentItem;
             }
             else
             {
-                //Use the selected tool
+                item = tools[selectedTool];
+            }
+
+            if (item == null)
+                return;
+
+            switch (context.phase)
+            {
+                case InputActionPhase.Started:
+                    item.Use(player);
+                    break;
+                case InputActionPhase.Canceled:
+                    item.StopUse();
+                    break;
+                default:
+                    break;
             }
         }
 
@@ -74,6 +80,10 @@ namespace GMTKJAM.Items
         #region Tools
         public void EquipItem(ToolItem newItem)
         {
+            newItem.transform.parent = toolAnchor;
+            newItem.transform.localPosition = Vector3.zero;
+            newItem.transform.localRotation = Quaternion.identity;
+
             tools.Add(newItem);
 
             SelectTool(tools.Count - 1);

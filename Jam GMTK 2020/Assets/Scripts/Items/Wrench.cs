@@ -1,5 +1,6 @@
 using UnityEngine;
 using GMTKJAM.Machines;
+using UnityEngine.Events;
 
 namespace GMTKJAM.Items
 {
@@ -13,6 +14,8 @@ namespace GMTKJAM.Items
         private MachineBase repairingMachine = null;
         private Transform raySource;
         private PlayerController player;
+        [SerializeField]
+        private UnityEvent onRapairing;
         public override void Use(PlayerController source)
         {
             raySource = source.camera.transform;
@@ -33,6 +36,7 @@ namespace GMTKJAM.Items
                 repairingMachine = hit.collider.GetComponent<MachineBase>();
                 if (repairingMachine != null)
                 {
+                    onRapairing?.Invoke();
                     repairingMachine.Repair(this);
                 }
             }

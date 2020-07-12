@@ -9,6 +9,16 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Default OBJ
     second: {fileID: 2100000, guid: 8d813257d53f6e5dcb2b811cc4d888a4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Default_OBJ.001
+    second: {fileID: 2100000, guid: dd78613532844ce43afb2815fac28359, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: RibBone
+    second: {fileID: 2100000, guid: dd78613532844ce43afb2815fac28359, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

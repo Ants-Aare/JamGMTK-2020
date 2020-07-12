@@ -3,7 +3,22 @@ guid: 261786096280dcecc9787a99a055368a
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glowy_
+    second: {fileID: 2100000, guid: 67adcb7add995b2c89aedc45ede9a187, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: eff59bb381472da38870b5b4bf361763, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Turret
+    second: {fileID: 2100000, guid: eff59bb381472da38870b5b4bf361763, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

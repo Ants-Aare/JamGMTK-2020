@@ -21,6 +21,7 @@ namespace GMTKJAM.Items
 
             PlayerController.instance.inventoryController.EquipItem(this);
         }
+
         public override void Use(PlayerController source)
         {
         }
