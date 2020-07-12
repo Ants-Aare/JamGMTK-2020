@@ -289,6 +289,11 @@ PrefabInstance:
       propertyPath: onInteractionStart.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3413571246779508291, guid: aa77f17d86921ff52bef026efc1e25e3,
+        type: 3}
+      propertyPath: actionName
+      value: Equip
+      objectReference: {fileID: 0}
     - target: {fileID: 5842533895714111838, guid: aa77f17d86921ff52bef026efc1e25e3,
         type: 3}
       propertyPath: m_Name
