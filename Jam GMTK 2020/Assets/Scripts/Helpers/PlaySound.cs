@@ -16,15 +16,18 @@ public class PlaySound : MonoBehaviour
 
     public void PlaySpecificSound(int soundIndex)
     {
-        source.PlayOneShot(soundsList[soundIndex]);
+        source.clip = soundsList[soundIndex];
+        source.Play();
     }
     public void PlayRandomizedSound1()
     {
-        source.PlayOneShot(randomizedSounds1[Random.Range(0, randomizedSounds2.Length)]);
+        source.clip = randomizedSounds1[Random.Range(0, randomizedSounds1.Length)];
+        source.Play();
     }
     public void PlayRandomizedSound2()
     {
-        source.PlayOneShot(randomizedSounds2[Random.Range(0, randomizedSounds2.Length)]);
+        source.clip = randomizedSounds2[Random.Range(0, randomizedSounds2.Length)];
+        source.Play();
     }
     public void PlayMultipleSounds()
     {

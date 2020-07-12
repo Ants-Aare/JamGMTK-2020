@@ -166,7 +166,7 @@ namespace GMTKJAM.Items
             while (true)
             {
                 Vector3 force = carryAnchor.position - currentItem.transform.position;
-                rigidBody.AddForce(force * carryForceStrength * Time.deltaTime, ForceMode.VelocityChange);
+                rigidBody.velocity = force * carryForceStrength;
                 yield return null;
             }
         }
